@@ -1,0 +1,53 @@
+@import "../../mixin.scss";
+.Carousel {
+    margin-bottom: 100px;
+    padding-top: 100px;
+    .contentWrapper {
+        position: relative;
+    }
+    .CarouselItems {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: hidden;
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 0 20px;
+        
+        .CarouselItem {
+            display: flex;
+            height: 250px;
+            justify-content: space-between;
+            gap: 15px;
+            cursor: pointer;
+            
+            flex-shrink: 0;
+            .posterBlock {
+                flex: 1;
+                width: fit-content;
+                height: 100%;
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 30px;
+                    img {
+                        height: 100%;
+                        object-position: center;
+                    }
+                }
+            }
+            .textBlock {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                .titel {
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+
+                
+            }
+        }
+    }   
