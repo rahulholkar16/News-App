@@ -1,8 +1,10 @@
 import React from 'react'
 import './Carousel.scss'
 import ContentWrapper from '../contentWrapper/ContentWrapper'
+import { useNavigate } from 'react-router-dom'
 
 const Carousel = ({ data, loading }) => {
+    const nevigate = useNavigate();
     console.log(data);
   return (
     <div className="Carousel">
@@ -12,7 +14,7 @@ const Carousel = ({ data, loading }) => {
                     <div className="CarouselItems">
                         {data?.map((item, index)=>{
                             return (
-                                <div className="CarouselItem" key={index}>
+                                <div className="CarouselItem" key={index} onClick={() => nevigate(`/${item?.title}/${index}`)}>
                                     <div className="posterBlock">
                                         <img src={item?.urlToImage} />
                                     </div>

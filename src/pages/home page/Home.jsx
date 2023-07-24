@@ -7,7 +7,6 @@ const Home = () => {
 
   return ( 
     <>
-      
       <Carousel data={data?.articles} loading={loading}/>
     </>
   )

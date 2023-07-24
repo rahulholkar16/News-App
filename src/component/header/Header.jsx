@@ -42,7 +42,7 @@ const Header = () => {
 
         <ul className='menuItems'>
           <li className="menuItem" onClick={()=>nevigate('/')}>Home</li>
-          <li className="menuItem">Top Headline</li>
+          <li className="menuItem" onClick={()=> nevigate(`q=all&sortBy=popularity`)}>All</li>
           <li className="menuItem">About</li>
         </ul>
       </ContentWrapper>
