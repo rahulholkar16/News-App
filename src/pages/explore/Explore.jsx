@@ -8,7 +8,6 @@ import Filter from '../../component/filter/Filter'
 const Explore = () => {
     const { query } = useParams();
     const { data, loading } = useFetch(`everything?${query}`)
-
     return (
         <>
             <Filter />
