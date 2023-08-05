@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element = {<Home />}/>
         <Route path='/:query' element = {<Explore />}/>
-        <Route path='everything?:query' element={<FilterPage/>} />
+        <Route path='/top-headlines/:query' element={<FilterPage/>} />
         <Route path='/:query/:id' element = {<Detail />}/>
         <Route path='/about' element={<About />}/>
         <Route path='*' element={<_404 />}/>

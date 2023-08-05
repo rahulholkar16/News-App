@@ -7,7 +7,7 @@ const filters = [
   {
     id: 0,
     filter_name: "Country",
-    filter_options: [{name: "INDIA", main_query: 'top-headlines?country=IN', sub_option: [
+    filter_options: [{name: "INDIA", main_query: 'country=IN', sub_option: [
           {
             name: "Business", query: 'top-headlines?country=IN&category=business'
           },
@@ -26,7 +26,7 @@ const filters = [
         ]
       }, 
 
-      {name: "USA", query: 'top-headlines?country=us', sub_option: [
+      {name: "USA", main_query: 'country=us', sub_option: [
           {
             name: "Business", query: 'top-headlines?country=IN&category=business'
           },
@@ -57,10 +57,12 @@ const filters = [
 ]
 
 const Filter = () => {
+
   const nevigate = useNavigate();
+
   const onClickHandler = (query) => {
-      nevigate(`${main_query}`);
-      
+    console.log(query);
+      nevigate(`/top-headlines/${query}`);
   }
 
   return (

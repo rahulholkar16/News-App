@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 const Carousel = ({ data, loading }) => {
     const nevigate = useNavigate();
-    console.log(data);
   return (
     <div className="Carousel">
         <ContentWrapper>
