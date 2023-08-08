@@ -2,6 +2,7 @@ import React from 'react'
 import './Carousel.scss'
 import ContentWrapper from '../contentWrapper/ContentWrapper'
 import { useNavigate } from 'react-router-dom'
+import dayjs from "dayjs";
 
 const Carousel = ({ data, loading }) => {
     const nevigate = useNavigate();
@@ -18,6 +19,7 @@ const Carousel = ({ data, loading }) => {
                                     </div>
                                     <div className="textBlock">
                                         <div className="titel">{item?.title}</div>
+                                        <div>{item?.source.name}: {dayjs(item.publishedAt).format("MMM D, YYYY")}</div>
                                         <div className='description'>{item?.description}</div>
                                     </div>
                                 </div>

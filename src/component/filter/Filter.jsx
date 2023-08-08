@@ -8,11 +8,11 @@ const filters = [
     id: 0,
     filter_name: "Country",
     filter_options: [
-      { name: "INDIA", main_query: "country=IN" },
+      { name: "CHINA", main_query: "q=china" },
 
       {
         name: "USA",
-        main_query: "country=us",
+        main_query: "q=usa",
       },
     ],
   },
@@ -20,45 +20,48 @@ const filters = [
   {
     id: 1,
     filter_name: "Compains",
-    filter_options: ["APPLE", "TATA", "META", "GOOGLE"],
+    filter_options: [
+      { name: "APPLE", main_query: "q=apple" },
+      { name: "MICROSOFT", main_query: "q=microsoft" },
+      { name: "META", main_query: "q=meta" },
+      { name: "GOOGLE", main_query: "q=google" },
+    ],
   },
 ];
 
 const sub_option = [
   {
-    name: "Business",
-    query: "&category=business",
+    name: "IPL",
+    query: "q=ipl",
   },
   {
-    name: "Technology",
-    query: "&category=technology",
+    name: "BITCOIN",
+    query: "q=bitcoin",
   },
   {
-    name: "Health",
-    query: "&category=health",
+    name: "CRICKET",
+    query: "q=cricket",
   },
   {
-    name: "Gernal",
-    query: "&category=gernal",
+    name: "TECHNOLOGY",
+    query: "q=technology",
   },
   {
     name: "Science",
-    query: "&category=science",
+    query: "q=science",
   },
 ];
 
 const Filter = () => {
   const nevigate = useNavigate();
-  const [isActive, setIsActive] = useState(false);
 
   const onClickHandler = (query) => {
-    nevigate(`/top-headlines/${query}`);
-    setIsActive(true);
+    nevigate(`${query}`);
   };
 
   const catrgory = (query) => {
-    nevigate(`/top-headlines/${query}`)
-  }
+    nevigate(`${query}`);
+  };
 
   return (
     <ContentWrapper>
@@ -84,19 +87,24 @@ const Filter = () => {
           </li>
         ))}
 
-        {isActive && (
-          <li className="list country-filter">
-            <a>Category</a>
-            <div className="sub-menu-1">
-              
-              <ul>
-                {sub_option.map((item, index) => (
-                  <li className="list" key={index} onClick={()=>{catrgory(item.query)}}>{item.name}</li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        )}
+        <li className="list country-filter">
+          <a>More</a>
+          <div className="sub-menu-1">
+            <ul>
+              {sub_option.map((item, index) => (
+                <li
+                  className="list"
+                  key={index}
+                  onClick={() => {
+                    catrgory(item.query);
+                  }}
+                >
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
       </div>
     </ContentWrapper>
   );

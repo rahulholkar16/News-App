@@ -4,10 +4,10 @@ import Carousel from '../../component/carousel/Carousel'
 
 const Home = () => {
   const { data, loading } = useFetch('top-headlines?country=IN')
-
+  const DATA = data?.articles.filter(item => item.urlToImage != null)
   return ( 
     <>
-      <Carousel data={data?.articles} loading={loading}/>
+      <Carousel data={DATA} loading={loading}/>
     </>
   )
 }
