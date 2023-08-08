@@ -10,7 +10,7 @@ const Explore = () => {
     const { data, loading } = useFetch(`everything?${query}`)
     return (
         <>
-            <Filter />
+            
             <Carousel data={data?.articles} loading={loading}/>
         </>
     )

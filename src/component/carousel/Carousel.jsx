@@ -8,8 +8,7 @@ const Carousel = ({ data, loading }) => {
   return (
     <div className="Carousel">
         <ContentWrapper>
-            {
-                !loading ? (
+            {!loading ? (
                     <div className="CarouselItems">
                         {data?.map((item, index)=>{
                             return (
@@ -29,8 +28,7 @@ const Carousel = ({ data, loading }) => {
                     <div>
                         <h1>Hello</h1>
                     </div>
-                )
-            }
+                )}
         </ContentWrapper>
     </div>
   )
