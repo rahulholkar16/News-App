@@ -12,6 +12,7 @@ export const fetchDataFromapi = async (Url) => {
     url: 'https://newsapi.org/v2/' + Url,
     method: 'GET',
     headers: headers,
+    withCredentials: true
     // You can also set other properties like data, params, etc. based on your needs
   };
 
