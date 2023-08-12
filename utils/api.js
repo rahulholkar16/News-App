@@ -1,27 +1,22 @@
 import axios from 'axios';
 
-export const fetchDataFromapi = async (Url) => {
-// Set the headers
+export const fetchDataFromApi = async (url) => {
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + import.meta.env.VITE_APP_API_KEY,
-    'Access-Control-Allow-Origin': '*',
+    'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
   };
 
-// Set the request configuration
   const config = {
-    url: 'https://newsapi.org/v2/' + Url,
+    url: `https://newsapi.org/v2/${url}`,
     method: 'GET',
-    headers: headers,
-    // You can also set other properties like data, params, etc. based on your needs
+    headers, // Object shorthand
   };
 
   try {
     const { data } = await axios(config);
     return data;
   } catch (err) {
-    console.log(err);
-    return err;
+    console.error(err); // Using console.error for errors
+    throw err; // Rethrow the error to handle it further up the call stack
   }
-
 };

@@ -1,29 +1,26 @@
 import { useEffect, useState } from "react";
-import { fetchDataFromapi } from "../../utils/api";
+import { fetchDataFromApi } from "../../utils/api";
 
 function useFetch(url) {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true); // Start with loading state
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading("loading...");
+    setLoading(true); // Set loading to true when starting a new fetch
     setData(null);
     setError(null);
 
-    fetchDataFromapi(url)
+    fetchDataFromApi(url)
       .then((res) => {
-        setLoading(false);
         setData(res);
       })
       .catch((err) => {
-        setLoading(false);
         setError("Something went wrong!");
+      })
+      .finally(() => {
+        setLoading(false); // Set loading to false regardless of success or error
       });
-
-      return () => {
-          
-       }
   }, [url]);
 
   return { data, loading, error };
