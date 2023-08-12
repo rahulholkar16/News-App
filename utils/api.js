@@ -4,7 +4,10 @@ export const fetchDataFromapi = async (Url) => {
 // Set the headers
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + import.meta.env.VITE_APP_API_KEY
+    'Authorization': 'Bearer ' + import.meta.env.VITE_APP_API_KEY,
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
   };
 
 // Set the request configuration
