@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Header.scss'
 import ContentWrapper from '../contentWrapper/ContentWrapper'
+import SearchComponent from '../Search/Search'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const Header = () => {
@@ -36,10 +37,11 @@ const Header = () => {
   return (
     <header className={`header ${show}`}>
       <ContentWrapper>
-        <div className="logo">
+      
+        <div className="logo" onClick={()=>{nevigate(`/`)}}>
           <h1>NEWS APP</h1>
         </div>
-
+        <SearchComponent />
         <ul className='menuItems'>
           <li className="menuItem" onClick={()=>nevigate('/')}>Home</li>
           <li className="menuItem" onClick={()=> nevigate('q=all&sortBy=popularity')}>All</li>
