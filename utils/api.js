@@ -13,7 +13,7 @@ export const fetchDataFromApi = async (url) => {
     url: `https://newsapi.org/v2/${url}`,
     method: 'GET',
     headers,
-    withCrendentials: false, // Object shorthand
+    withCrendentials: true, // Object shorthand
   };
 
   try {
