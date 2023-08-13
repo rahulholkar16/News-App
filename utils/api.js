@@ -14,10 +14,10 @@ export const fetchDataFromApi = async (url) => {
   };
 
   try {
-    const { data } = await axios.get(`https://newsapi.org/v2/${url}`, {headers});
+    const { data } = await axios(config);
     return data;
   } catch (err) {
     console.error(err); // Using console.error for errors
-    throw err; // Rethrow the error to handle it further up the call stack
+     // Rethrow the error to handle it further up the call stack
   }
 };
