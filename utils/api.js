@@ -4,7 +4,7 @@ export const fetchDataFromApi = async (url) => {
   const headers = {
     'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
     'Content-Type': 'application/json',
-    'Access-Control-Request-Headers': '*',
+    'Access-Control-Allow-Origin': "https://news-app-eight-gules.vercel.app/"
     
     
   };
@@ -13,7 +13,7 @@ export const fetchDataFromApi = async (url) => {
     url: `https://newsapi.org/v2/${url}`,
     method: 'GET',
     headers,
-    withCrendentials: true, // Object shorthand
+   // Object shorthand
   };
 
   try {
