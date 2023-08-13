@@ -5,13 +5,11 @@ export const fetchDataFromApi = async (url) => {
     'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': "*",
-    
-    'Accept': 'application/json',
   };
 
   const config = {
     url: `https://newsapi.org/v2/${url}`,
-    method: 'GET',
+    method: 'GET, POST',
     headers,
    // Object shorthand
   };
