@@ -6,7 +6,7 @@ export const fetchDataFromApi = async (url) => {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': "*",
     
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept': 'application/json',
   };
 
   const config = {
