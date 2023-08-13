@@ -2,11 +2,8 @@ import axios from 'axios';
 
 export const fetchDataFromApi = async (url) => {
   const headers = {
-    'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': "*",
-    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE',
-    'Allow': 'GET, POST, HEAD',
+    'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`
   };
 
   const config = {
