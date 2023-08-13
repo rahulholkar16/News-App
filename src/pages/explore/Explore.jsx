@@ -7,7 +7,7 @@ const Explore = () => {
   const { query } = useParams();
   const { data, loading } = useFetch(`everything?${query}`);
 
-  const DATA = data.articles.filter((item) => item?.urlToImage != null);
+  const DATA = data?.articles.filter((item) => item?.urlToImage != null);
 
   return (
     <>
