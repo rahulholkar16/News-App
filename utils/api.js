@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 export const fetchDataFromApi = async (url) => {
-  const corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const headers = {
-    
+    'Content-Type': 'application/json',
     'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
+    'Origin': 'https://news-app-kappa-livid.vercel.app/'
   };
 
   const config = {
@@ -15,7 +15,7 @@ export const fetchDataFromApi = async (url) => {
   };
 
   try {
-    const { data } = await axios.get(`https://newsapi.org/v2/${url}`, {headers});
+    const { data } = await axios(config);
     return data;
   } catch (err) {
     console.error(err); // Using console.error for errors
