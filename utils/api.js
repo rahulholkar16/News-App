@@ -4,9 +4,9 @@ export const fetchDataFromApi = async (url) => {
   const headers = {
     'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': "https://news-app-eight-gules.vercel.app/"
+    'Access-Control-Allow-Origin': "https://news-app-eight-gules.vercel.app/",
     
-    
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   };
 
   const config = {
