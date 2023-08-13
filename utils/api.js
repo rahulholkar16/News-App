@@ -3,15 +3,16 @@ import axios from 'axios';
 export const fetchDataFromApi = async (url) => {
   const headers = {
     'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
+    'Content-Type': 'application/json',
     
-
     
   };
 
   const config = {
     url: `https://newsapi.org/v2/${url}`,
     method: 'GET',
-    headers, // Object shorthand
+    headers,
+    withCrendentials: true, // Object shorthand
   };
 
   try {
