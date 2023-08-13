@@ -2,9 +2,8 @@ import axios from 'axios';
 
 export const fetchDataFromApi = async (url) => {
   const headers = {
-    'Content-Type': 'application/json',
+    
     'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
-    'Origin': 'https://news-app-kappa-livid.vercel.app/',
   };
 
   const config = {
