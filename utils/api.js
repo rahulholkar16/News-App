@@ -10,7 +10,7 @@ export const fetchDataFromApi = async (url) => {
 
   const config = {
     url: `https://newsapi.org/v2/${url}`,
-
+    method: 'GET',
     headers,
    // Object shorthand
   };
