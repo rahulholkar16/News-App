@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 export const fetchDataFromApi = async (url) => {
+  const api = 'c4e5c729efd84a6f8f726d383f2024a5';
   const headers = {
-    'Authorization': `Bearer ${import.meta.env.VITE_APP_API_KEY}`,
+    'X-Api-Key': api,
   };
 
   const config = {
@@ -13,7 +14,7 @@ export const fetchDataFromApi = async (url) => {
   };
 
   try {
-    const { data } = await axios(config);
+    const { data } = await axios.get(`https://newsapi.org/v2/${url}`, {headers});
     return data;
   } catch (err) {
     console.error(err); // Using console.error for errors
