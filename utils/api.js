@@ -6,7 +6,7 @@ export const fetchDataFromApi = async (url) => {
     url: `https://newsapi.org/v2/${url}`,
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer ' +  process.env.VITE_APP_API_KEY,
+      Authorization: 'Bearer ' +  import.meta.env.VITE_APP_API_KEY,
     }
   };
 
