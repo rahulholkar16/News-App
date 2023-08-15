@@ -6,8 +6,7 @@ export const fetchDataFromApi = async (url) => {
     url: `https://newsapi.org/v2/${url}`,
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer ' + import.meta.env.VITE_APP_API_KEY,
-      'Access-Control-Allow-Origin': 'https://news-app-ebon-tau.vercel.app/'
+      Authorization: 'Bearer ' +  process.env.VITE_APP_API_KEY,
     }
   };
 
